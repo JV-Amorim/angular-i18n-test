@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "i18n-test": {
+    "angular-i18n-test": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -29,7 +29,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/i18n-test",
+            "outputPath": "dist/angular-i18n-test",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -74,6 +74,16 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "en-US": {
+              "localize": [
+                "en-US"
+              ]
+            },
+            "pt-BR": {
+              "localize": [
+                "pt-BR"
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -82,10 +92,16 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "i18n-test:build:production"
+              "browserTarget": "angular-i18n-test:build:production"
             },
             "development": {
-              "browserTarget": "i18n-test:build:development"
+              "browserTarget": "angular-i18n-test:build:development"
+            },
+            "en-US": {
+              "browserTarget": "angular-i18n-test:build:en-US"
+            },
+            "pt-BR": {
+              "browserTarget": "angular-i18n-test:build:pt-BR"
             }
           },
           "defaultConfiguration": "development"
@@ -93,7 +109,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "i18n-test:build"
+            "browserTarget": "angular-i18n-test:build"
           }
         },
         "test": {
@@ -117,5 +133,5 @@
       }
     }
   },
-  "defaultProject": "i18n-test"
+  "defaultProject": "angular-i18n-test"
 }
